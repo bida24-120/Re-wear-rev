@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Re-wear Revolution Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="donate.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Re-wear Revolution Store</h1>
+            <p>"Where treasure gets a second chance"</p>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="donate.html">Donate</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="signin.html">Sign In</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="donate-container">
+            <h2>Support Our Mission</h2>
+            <p>Your donation helps us give pre-loved treasures a new life and promote sustainable fashion.</p>
+
+            <div class="donation-options">
+                <button class="donation-button" data-amount="10">$10</button>
+                <button class="donation-button" data-amount="25">$25</button>
+                <button class="donation-button" data-amount="50">$50</button>
+                <button class="donation-button" data-amount="100">$100</button>
+                <button class="donation-button custom-amount">Custom Amount</button>
+            </div>
+
+            <div class="custom-amount-input" style="display: none;">
+                <input type="number" id="customAmount" placeholder="Enter Amount ($)">
+                <button class="donate-now">Donate Now</button>
+            </div>
+
+            <div class="payment-details">
+                <p>Secure Payment via:</p>
+                <img src="images/payment-icons.png" alt="Payment Icons" class="payment-icons">
+            </div>
+
+            <p class="thank-you">Thank you for your generous support!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Re-wear Revolution Store. All rights reserved.</p>
+    </footer>
+    <script src="donate.js"></script>
+</body>
+</html>
