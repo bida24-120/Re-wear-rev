@@ -751,7 +751,7 @@ footer {
     margin-bottom: 1rem;
 }
 
-.add-to-cart-btn, .view-details-btn {
+.add-to-cart-btn {
     background-color: #f5f5dc; /* Beige color for buttons */
     color: #333; /* Dark text for contrast */
     border: 1px solid #ccc; /* Optional: Add a border for definition */
@@ -763,7 +763,7 @@ footer {
     font-size: 1rem;
 }
 
-.add-to-cart-btn:hover, .view-details-btn:hover {
+.add-to-cart-btn:hover {
     background-color: #e0e0c0; /* Slightly darker beige on hover */
 }
 /* shoes.css */
