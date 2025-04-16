@@ -169,16 +169,24 @@
         <p>&copy; 2025 Re-wear Revolution Store. All rights reserved. </p>
     </footer>
     <script>
-        // Basic JavaScript to simulate adding to cart (no actual cart implementation)
         document.addEventListener('DOMContentLoaded', function() {
             const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
             addToCartButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const productId = this.getAttribute('data-product-id');
                     alert(`Added product with ID: ${productId} to cart! (Cart functionality not implemented)`);
-                    // In a real application, you would update a cart data structure here.
                 });
             });
+
+            // Automatic click functionality (USE WITH CAUTION)
+            const firstAddToCartButton = document.querySelector('.add-to-cart-btn');
+            if (firstAddToCartButton) {
+                // Simulate a click after a short delay (to ensure the page is fully loaded)
+                setTimeout(() => {
+                    firstAddToCartButton.click();
+                    alert('The first "Add to Cart" button was automatically clicked on page load.');
+                }, 1000); // Adjust the delay (in milliseconds) as needed
+            }
         });
     </script>
 </body>
