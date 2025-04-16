@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Re-wear Revolution Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-inter">
+    <header class="bg-beige shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="logo">
+                <h1 class="text-xl font-bold text-brown">Re-wear Revolution Store</h1>
+                <p class="text-sm text-gray-600">"Where treasure gets a second chance"</p>
+            </div>
+            <nav class="hidden md:block">
+                <a href="index.html" class="text-brown hover:text-orange px-4 transition duration-300">Home</a>
+                <a href="products.html" class="text-brown hover:text-orange px-4 transition duration-300">Products</a>
+                <a href="checkout.html" class="text-brown hover:text-orange px-4 transition duration-300">Checkout</a>
+                <a href="about.html" class="text-brown hover:text-orange px-4 transition duration-300">About Us</a>
+                <a href="contact.html" class="text-brown hover:text-orange px-4 transition duration-300">Contact</a>
+                <a href="donate.html" class="text-brown hover:text-orange px-4 transition duration-300">Donate</a>
+                <a href="feedback.html" class="text-brown hover:text-orange px-4 transition duration-300">Feedback</a>
+                <a href="signin.html" class="text-brown hover:text-orange px-4 transition duration-300">Sign In</a>
+                <a href="signup.html" class="text-brown hover:text-orange px-4 transition duration-300">Sign Up</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="hamburger-btn" class="text-brown focus:outline-none" aria-label="Toggle Navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <div id="mobile-menu" class="hidden absolute top-16 right-0 bg-beige shadow-lg rounded-md py-2 px-4 space-y-2">
+                    <a href="index.html" class="block text-brown hover:text-orange transition duration-300">Home</a>
+                    <a href="products.html" class="block text-brown hover:text-orange transition duration-300">Products</a>
+                    <a href="checkout.html" class="block text-brown hover:text-orange transition duration-300">Checkout</a>
+                    <a href="about.html" class="block text-brown hover:text-orange transition duration-300">About Us</a>
+                    <a href="contact.html" class="block text-brown hover:text-orange transition duration-300">Contact</a>
+                    <a href="donate.html" class="block text-brown hover:text-orange transition duration-300">Donate</a>
+                    <a href="feedback.html" class="block text-brown hover:text-orange transition duration-300">Feedback</a>
+                    <a href="signin.html" class="block text-brown hover:text-orange transition duration-300">Sign In</a>
+                    <a href="signup.html" class="block text-brown hover:text-orange transition duration-300">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 p-4">
+        <h1 class="text-2xl font-semibold text-brown mb-6 text-center">Your Cart</h1>
+
+        <div id="cart-items" class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <p class="text-gray-500 text-center">Your cart is empty.</p>
+        </div>
+
+        <div id="cart-summary" class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold text-brown mb-4">Cart Summary</h2>
+            <div class="summary-item flex justify-between items-center mb-2">
+                <span class="text-gray-700">Subtotal:</span>
+                <span id="subtotal" class="text-brown font-semibold">$0.00</span>
+            </div>
+            <div class="summary-item flex justify-between items-center mb-2">
+                <span class="text-gray-700">Shipping:</span>
+                <span id="shipping" class="text-brown font-semibold">$0.00</span>
+            </div>
+            <div class="summary-item flex justify-between items-center mb-4">
+                <span class="text-gray-700">Total:</span>
+                <span id="total" class="text-xl font-bold text-orange">$0.00</span>
+            </div>
+            <div class="text-center">
+                <button id="checkout-btn" class="bg-orange text-white py-3 px-6 rounded-md hover:bg-brown transition duration-300 font-semibold">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+
+        <div id="checkout-details" class="bg-white shadow-md rounded-lg p-6 mb-8 hidden">
+            <h2 class="text-xl font-semibold text-brown mb-6">Checkout Details</h2>
+            <form id="checkout-form" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name:</label>
+                    <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <div id="name-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                    <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <div id="email-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+                </div>
+                <div>
+                    <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Address:</label>
+                    <input type="text" id="address" name="address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <div id="address-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+                </div>
+                <div>
+                    <label for="city" class="block text-gray-700 text-sm font-bold mb-2">City:</label>
+                    <input type="text" id="city" name="city" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <div id="city-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+                </div>
+                <div>
+                    <label for="state" class="block text-gray-700 text-sm font-bold mb-2">State:</label>
+                    <input type="text" id="state" name="state" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <div id="state-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+                </div>
+                <div>
+                    <label for="zip" class="block text-gray-700 text-sm font-bold mb-2">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <div id="zip-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+                </div>
+                <div>
+                    <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    <div id="phone-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="terms" name="terms" class="mr-2 h-5 w-5 text-orange rounded focus:ring-orange" required>
+                    <label for="terms" class="text-gray-700 text-sm font-bold">I agree to the <a href="#" class="text-orange hover:underline">terms and conditions</a></label>
+                    <div id="terms-error" class="text-red-500 text-xs italic" style="display: none;"></div>
+                </div>
+
+                <button type="submit" class="bg-orange text-white py-3 px-6 rounded-md hover:bg-brown transition duration-300 font-semibold w-full">
+                    Place Order
+                </button>
+            </form>
+            <div id="order-summary" class="mt-8 p-4 bg-beige rounded-md shadow-inner">
+                 <h3 class="text-lg font-semibold text-brown mb-2">Your Order Summary</h3>
+                  <div id="order-items-summary">
+                    </div>
+                 <div class="order-summary-item flex justify-between items-center mt-2">
+                    <span class="text-gray-700 font-medium">Subtotal:</span>
+                    <span id="order-subtotal" class="text-brown font-semibold">$0.00</span>
+                 </div>
+                  <div class="order-summary-item flex justify-between items-center mt-2">
+                    <span class="text-gray-700 font-medium">Shipping:</span>
+                    <span id="order-shipping" class="text-brown font-semibold">$0.00</span>
+                 </div>
+                 <div class="order-summary-item flex justify-between items-center mt-2">
+                    <span class="text-gray-700 font-medium">Total:</span>
+                    <span id="order-total" class="text-xl font-bold text-orange">$0.00</span>
+                 </div>
+            </div>
+            <div id="payment-message" class="mt-6 text-green-600 font-semibold text-center hidden">
+                Thank you for your order!  Your payment is being processed.
+            </div>
+        </div>
+    </main>
+
+     <footer class="bg-beige shadow-md py-4 mt-8">
+        <div class="container mx-auto text-center text-gray-700">
+            &copy; 2024 Re-wear Revolution Store. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const subtotalElement = document.getElementById('subtotal');
+    const shippingElement = document.getElementById('shipping');
+    const totalElement = document.getElementById('total');
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const checkoutDetails = document.getElementById('checkout-details');
+    const checkoutForm = document.getElementById('checkout-form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const addressInput = document.getElementById('address');
+    const cityInput = document.getElementById('city');
+    const stateInput = document.getElementById('state');
+    const zipInput = document.getElementById('zip');
+    const phoneInput = document.getElementById('phone');
+    const termsCheckbox = document.getElementById('terms');
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const addressError = document.getElementById('address-error');
+    const cityError = document.getElementById('city-error');
+    const stateError = document.getElementById('state-error');
+    const zipError = document.getElementById('zip-error');
+    const phoneError = document.getElementById('phone-error');
+    const termsError = document.getElementById('terms-error');
+    const orderSummary = document.getElementById('order-summary');
+    const orderItemsSummary = document.getElementById('order-items-summary');
+    const orderSubtotalElement = document.getElementById('order-subtotal');
+    const orderShippingElement = document.getElementById('order-shipping');
+    const orderTotalElement = document.getElementById('order-total');
+    const paymentMessage = document.getElementById('payment-message');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+
+    let cart = JSON.parse(sessionStorage.getItem('cart')) || [
+      { id: 'clothing01', name: 'Shirt 1', price: 30.00, quantity: 2, image: 'shirt.01.jpg' },
+      { id: 'clothing03', name: 'Shirt 3', price: 25.00, quantity: 1, image: 'shirt.03.jpg' },
+    ];
+
+    function updateCartDisplay() {
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center">Your cart is empty.</p>';
+            subtotalElement.textContent = '$0.00';
+            shippingElement.textContent = '$0.00';
+            totalElement.textContent = '$0.00';
+            checkoutBtn.disabled = true;
+            checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        } else {
+            cartItemsContainer.innerHTML = '';
+            let subtotal = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item', 'flex', 'justify-between', 'items-center', 'py-4', 'border-b', 'border-gray-200');
+
+                cartItemDiv.innerHTML = `
+                    <div class="flex items-center">
+                         <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-md mr-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-brown">${item.name}</h3>
+                            <p class="text-gray-600">Price: $${item.price.toFixed(2)}</p>
+                            <div class="flex items-center mt-2 space-x-4">
+                                <label for="quantity-${item.id}" class="text-gray-700 font-medium">Quantity:</label>
+                                <input type="number" id="quantity-${item.id}" value="${item.quantity}" min="1" class="w-20 px-2 py-1 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange text-center quantity-input" data-product-id="${item.id}">
+                                <button class="remove-item text-red-500 hover:text-red-700 transition duration-300 font-semibold" data-product-id="${item.id}">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-brown font-semibold">$${itemTotal.toFixed(2)}</p>
+                `;
+
+                cartItemsContainer.appendChild(cartItemDiv);
+            });
+
+            const shippingCost = subtotal > 50 ? 0 : 10;
+            const total = subtotal + shippingCost;
+
+            subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+            shippingElement.textContent = `$${shippingCost.toFixed(2)}`;
+            totalElement.textContent = `$${total.toFixed(2)}`;
+
+            checkoutBtn.disabled = false;
+            checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+         sessionStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+
+    cartItemsContainer.addEventListener('click', (event) => {
+        if (event.target.classList.contains('remove-item')) {
+            const productId = event.target.getAttribute('data-product-id');
+            cart = cart.filter(item => item.id !== productId);
+            updateCartDisplay();
+        }
+    });
+
+    cartItemsContainer.addEventListener('change', (event) => {
+        if (event.target.classList.contains('quantity-input')) {
+            const productId = event.target.getAttribute('data-product-id');
+            const newQuantity = parseInt(event.target.value);
+            if (newQuantity > 0) {
+                cart.map(item => {
+                    if (item.id === productId) {
+                        item.quantity = newQuantity;
+                    }
+                    return item;
+                });
+                updateCartDisplay();
+            }
+        }
+    });
+
+    checkoutBtn.addEventListener('click', () => {
+        checkoutDetails.classList.remove('hidden');
+         window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+
+    function validateForm() {
+        let isValid = true;
+
+        if (!nameInput.value.trim()) {
+            nameError.textContent = 'Please enter your full name.';
+            nameError.style.display = 'block';
+            isValid = false;
+        } else {
+            nameError.style.display = 'none';
+        }
+
+        if (!emailInput.value.trim()) {
+            emailError.textContent = 'Please enter your email address.';
+            emailError.style.display = 'block';
+            isValid = false;
+        } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(emailInput.value)) {
+            emailError.textContent = 'Please enter a valid email address.';
+            emailError.style.display = 'block';
+            isValid = false;
+        } else {
+            emailError.style.display = 'none';
+        }
+
+        if (!addressInput.value.trim()) {
+            addressError.textContent = 'Please enter your address.';
+            addressError.style.display = 'block';
+            isValid = false;
+        } else {
+            addressError.style.display = 'none';
+        }
+
+        if (!cityInput.value.trim()) {
+            cityError.textContent = 'Please enter your city.';
+            cityError.style.display = 'block';
+            isValid = false;
+        } else {
+            cityError.style.display = 'none';
+        }
+
+        if (!stateInput.value.trim()) {
+            stateError.textContent = 'Please enter your state.';
+            stateError.style.display = 'block';
+            isValid = false;
+        } else {
+            stateError.style.display = 'none';
+        }
+
+        if (!zipInput.value.trim()) {
+            zipError.textContent = 'Please enter your ZIP code.';
+            zipError.style.display = 'block';
+            isValid = false;
+        } else if (!/^\d{5}(-\d{4})?$/.test(zipInput.value)) {
+            zipError.textContent = 'Please enter a valid ZIP code (e.g., 12345 or 12345-6789).';
+            zipError.style.display = 'block';
+            isValid = false;
+        } else {
+            zipError.style.display = 'none';
+        }
+
+        if (!phoneInput.value.trim()) {
+            phoneError.textContent = 'Please enter your phone number.';
+            phoneError.style.display = 'block';
+            isValid = false;
+        } else if (!/^\d{3}-\d{3}-\d{4}$/.test(phoneInput.value)) {
+            phoneError.textContent = 'Please enter a valid phone number (e.g., 123-456-7890).';
+            phoneError.style.display = 'block';
+            isValid = false;
+        } else {
+            phoneError.style.display = 'none';
+        }
+
+        if (!termsCheckbox.checked) {
+            termsError.textContent = 'Please agree to the terms and conditions.';
+            termsError.style.display = 'block';
+            isValid = false;
+        } else {
+            termsError.style.display = 'none';
+        }
+
+        return isValid;
+    }
+
+    checkoutForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (validateForm()) {
+            displayOrderSummary();
+            paymentMessage.classList.remove('hidden');
+             setTimeout(() => {
+                window.location.href="index.html";
+             }, 3000)
+
+        }
+    });
+
+    function displayOrderSummary() {
+        orderItemsSummary.innerHTML = '';
+        let orderSubtotal = 0;
+
+         cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            orderSubtotal += itemTotal;
+             const orderItemDiv = document.createElement('div');
+                orderItemDiv.classList.add('order-item', 'flex', 'justify-between', 'items-center', 'mb-2');
+                 orderItemDiv.innerHTML = `
+                    <span class="text-gray-700 font-medium">${item.name} x ${item.quantity}</span>
+                    <span class="text-brown font-semibold">$${itemTotal.toFixed(2)}</span>
+                `;
+              orderItemsSummary.appendChild(orderItemDiv);
+         })
+
+        const orderShippingCost = orderSubtotal > 50 ? 0 : 10;
+        const orderTotal = orderSubtotal + orderShippingCost;
+
+        orderSubtotalElement.textContent = `$${orderSubtotal.toFixed(2)}`;
+        orderShippingElement.textContent = `$${orderShippingCost.toFixed(2)}`;
+        orderTotalElement.textContent = `$${orderTotal.toFixed(2)}`;
+        orderSummary.classList.remove('hidden');
+    }
+    hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    updateCartDisplay();
+});
+</script>
+</body>
+</html>
