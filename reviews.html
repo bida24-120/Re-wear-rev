@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Re-wear Revolution Store</h1>
+            <p>"Where treasure gets a second chance"</p>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="donate.html">Donate</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="reviews.html">Customer Reviews</a>
+            <a href="signin.html">Sign In</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="reviews-container">
+            <h2>Customer Reviews</h2>
+            <div id="reviews">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Re-wear Revolution Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const reviewsData = [
+          {
+              name: "Alice Smith",
+              rating: 5,
+              comment: "I love this store! The quality of the pre-loved clothes is amazing, and I always find unique pieces.",
+              date: "2024-07-28",
+          },
+          {
+              name: "Bob Johnson",
+              rating: 4,
+              comment: "Great selection and good prices. I'm happy to support a sustainable fashion model.",
+              date: "2024-07-25",
+          },
+          {
+              name: "Carol Williams",
+              rating: 5,
+              comment: "The best place to find vintage treasures! The website is easy to use, and the customer service is excellent.",
+              date: "2024-07-20",
+          },
+           {
+              name: "David Miller",
+              rating: 3,
+              comment: "Good store, but some items were not as described.  The return process was easy though.",
+              date: "2024-07-18",
+          },
+          {
+                name: "Emily Brown",
+                rating: 5,
+                comment: "I'm so impressed with the variety and quality.  It's guilt-free shopping!",
+                date: "2024-07-15",
+            },
+      ];
+
+      function generateStars(rating) {
+          let stars = '';
+          for (let i = 0; i < 5; i++) {
+              stars += `<i class="fa${i < rating ? 's' : 'r'} fa-star"></i>`;
+          }
+          return stars;
+      }
+
+      function displayReviews() {
+          const reviewsContainer = document.getElementById("reviews");
+          reviewsContainer.innerHTML = "";
+
+          reviewsData.forEach((review) => {
+              const reviewCard = document.createElement("div");
+              reviewCard.classList.add("review-card");
+
+              const reviewHeader = document.createElement("div");
+              reviewHeader.classList.add("review-header");
+
+              const profileIcon = document.createElement("div");
+              profileIcon.classList.add("profile-icon");
+              profileIcon.textContent = review.name[0];
+
+              const nameElement = document.createElement("h3");
+              nameElement.textContent = review.name;
+
+              const ratingElement = document.createElement("div");
+              ratingElement.classList.add("rating");
+              ratingElement.innerHTML = generateStars(review.rating);
+
+              reviewHeader.appendChild(profileIcon);
+              reviewHeader.appendChild(nameElement);
+              reviewHeader.appendChild(ratingElement);
+
+              const contentElement = document.createElement("p");
+              contentElement.classList.add("review-content");
+              contentElement.textContent = review.comment;
+
+              const dateElement = document.createElement("p");
+              dateElement.classList.add("review-date");
+              dateElement.textContent = review.date;
+
+              reviewCard.appendChild(reviewHeader);
+              reviewCard.appendChild(contentElement);
+              reviewCard.appendChild(dateElement);
+
+              reviewsContainer.appendChild(reviewCard);
+          });
+      }
+
+      displayReviews();
+      </script>
+</body>
+</html>
