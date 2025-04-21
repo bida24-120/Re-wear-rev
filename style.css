@@ -1204,3 +1204,87 @@ footer {
 .add-to-cart-btn:hover {
     background-color: #e0e0c0; /* Slightly darker beige on hover */
 }
+.reviews-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-card .profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #666;
+}
+
+.review-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.review-card .rating {
+    color: #ffc107;
+    margin-left: auto; /* Push rating to the right */
+}
+
+.review-content {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.review-date {
+    font-size: 0.9rem;
+    color: #888;
+    align-self: flex-end; /* Align date to the bottom */
+}
+
+@media (max-width: 600px) {
+    .reviews-container {
+        padding: 1rem;
+    }
+
+    .review-card {
+        padding: 1rem;
+    }
+
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .review-card .rating {
+        margin-left: 0;
+    }
+}
+
