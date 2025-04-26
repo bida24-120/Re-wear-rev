@@ -1,199 +1,139 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-    display: flex; /* Enable flexbox for the body */
-    flex-direction: column; /* Stack header, main, footer */
-    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    line-height: 1.6;
+    background-color: #f5f5dc; /* Beige background */
 }
 
 header {
-    background-color: #ffffff;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
     text-align: center;
+}
+
+.logo {
+    margin-bottom: 1rem;
 }
 
 .logo h1 {
     margin: 0;
-    font-size: 2rem;
-    color: #007bff;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .logo p {
     margin: 0;
-    font-size: 0.9rem;
-    color: #666;
+    font-style: italic;
+    color: #ccc;
 }
 
 nav {
-    margin-top: 1rem;
-    display: flex; /* Enable flexbox for navigation links */
-    justify-content: center; /* Center the links horizontally */
-    flex-wrap: wrap; /* Allow links to wrap to the next line on smaller screens */
-    gap: 0.5rem; /* Add some spacing between the links */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav a {
-    margin: 0; /* Remove individual link margins, use gap instead */
-    text-decoration: none;
-    color: #007bff;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 0.5rem 0.75rem; /* Add some padding to the links */
-    border-radius: 5px; /* Optional: add rounded corners */
-}
-
-nav a:hover {
-    color: #0056b3;
-    background-color: #e9ecef; /* Optional: add a background on hover */
-}
-
-main {
-    flex-grow: 1; /* Allow main to take up remaining vertical space */
-    display: flex;
-    justify-content: center; /* Center the signup container horizontally */
-    align-items: center; /* Center the signup container vertically */
-    padding: 2rem; /* Add some padding around the main content */
-}
-
-.signup-container {
-    background-color: #ffffff;
-    padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 90%; /* Make the container responsive width */
-    max-width: 400px; /* Set a maximum width */
-}
-
-.signup-container h2 {
-    margin-bottom: 0.5rem;
-    color: #333;
-    font-size: 1.8rem;
-}
-
-.intro-text {
-    margin-bottom: 2rem;
-    color: #666;
-    font-size: 0.95rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #555;
-    font-size: 0.9rem;
-}
-
-.form-group input {
-    width: calc(100% - 1.8rem); /* Adjust width for padding and border */
-    padding: 0.9rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 0.95rem;
-}
-
-.signup-button {
-    width: 100%;
-    background-color: #007bff;
     color: #fff;
-    border: none;
-    padding: 1rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.signup-button:hover {
+nav a:hover {
+    background-color: #555;
+}
+
+main {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero {
+    background-color: #e0e0e0;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex; /* Use flexbox to arrange image and text */
+    align-items: center; /* Center items vertically */
+    flex-direction: row; /* Default is row, but explicit for clarity */
+}
+
+.hero-image {
+    width: 40%; /* Adjust image width as needed */
+    height: auto; /* Let the height adjust proportionally */
+    border-radius: 8px 0 0 8px; /* Round left corners */
+    overflow: hidden; /* Hide any potential image overflow */
+}
+
+.hero-image img {
+    display: block; /* Remove any extra spacing below the image */
+    width: 100%; /* Make the image scale to the width of its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container without distortion (may crop) */
+}
+
+.hero-text {
+    width: 60%; /* Adjust text width as needed */
+    padding: 0 2rem;
+    text-align: left; /* Align text to the left */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
     background-color: #0056b3;
 }
 
-.signin-link {
-    margin-top: 1.2rem;
-    color: #555;
-    font-size: 0.9rem;
-}
-
-.signin-link a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.signin-link a:hover {
-    text-decoration: underline;
-}
-
 footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 1.5rem;
-    background-color: #f8f9fa;
-    color: #777;
-    font-size: 0.85rem;
-    margin-top: 2rem; /* Add some space above the footer */
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Media Queries for Responsiveness */
-
-/* For smaller screens (e.g., tablets) */
+/* Media Query for smaller screens (adjust as needed) */
 @media (max-width: 768px) {
-    .signup-container {
-        width: 80%;
-        margin: 3rem auto;
+    .hero {
+        flex-direction: column; /* Stack image and text on smaller screens */
+    }
+
+    .hero-image {
+        width: 100%;
+        border-radius: 8px 8px 0 0; /* Round top corners when stacked */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .hero-text {
+        width: 100%;
         padding: 2rem;
-    }
-
-    nav {
-        flex-direction: column; /* Stack navigation links vertically */
-        align-items: center; /* Center the stacked links */
-    }
-
-    nav a {
-        margin: 0.25rem 0;
-        width: 80%; /* Make links wider on smaller screens */
-        text-align: center;
-    }
-}
-
-/* For even smaller screens (e.g., mobile phones) */
-@media (max-width: 480px) {
-    .signup-container {
-        width: 95%;
-        padding: 1.5rem;
-    }
-
-    .signup-container h2 {
-        font-size: 1.5rem;
-    }
-
-    .intro-text {
-        font-size: 0.9rem;
-    }
-
-    .form-group label {
-        font-size: 0.85rem;
-    }
-
-    .form-group input {
-        padding: 0.75rem;
-        font-size: 0.9rem;
-    }
-
-    .signup-button {
-        font-size: 0.95rem;
-        padding: 0.8rem;
-    }
-
-    .signin-link {
-        font-size: 0.8rem;
+        text-align: center; /* Center text on smaller screens */
     }
 }
 /* products.css (specific styles for products page) */
@@ -418,12 +358,15 @@ footer {
     font-size: 0.85rem;
     margin-top: 3rem;
 }
+/* signup.css */
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right, #f0f4f8, #d9e2ec);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    display: flex; /* Enable flexbox for centering the main content */
+    flex-direction: column; /* Stack header, main, and footer */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
 
 header {
@@ -447,9 +390,6 @@ header {
 
 nav {
     margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Added for better ছোট screen navigation */
 }
 
 nav a {
@@ -458,33 +398,29 @@ nav a {
     color: #007bff;
     font-weight: 500;
     transition: color 0.3s ease;
-    padding: 0.5rem 1rem; /* Added padding for better touch area */
-    border-radius: 5px; /* Added border-radius for visual appeal */
 }
 
 nav a:hover {
     color: #0056b3;
-    background-color: rgba(0, 123, 255, 0.1); /* হালকা background on hover */
 }
 
 main {
-    flex: 1; /* Added to make main take up available vertical space */
-    display: flex;
-    flex-direction: column;
+    flex-grow: 1; /* Allow main to take up remaining vertical space */
+    display: flex; /* Center the signup container horizontally and vertically */
+    justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 2rem; /* Add some padding around the container on smaller screens */
 }
 
-
 .signup-container {
-    width: 90%; /* Increased width for better ছোট screen ব্যবহার */
-    max-width: 400px; /* কিন্তু still maintain a maximum width */
-    margin: 2rem auto; /* Reduced top margin and centered */
     background-color: #ffffff;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 90%; /* Start with a percentage width for responsiveness */
+    max-width: 400px; /* Set a maximum width to prevent it from getting too large on wider screens */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
 .signup-container h2 {
@@ -512,7 +448,7 @@ main {
 }
 
 .form-group input {
-    width: calc(100% - 20px); /* Adjusted width with padding in mind */
+    width: calc(100% - 20px); /* Adjust for padding and border */
     padding: 0.9rem;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -557,25 +493,17 @@ footer {
     background-color: #f8f9fa;
     color: #777;
     font-size: 0.85rem;
-    margin-top: 2rem; /* Adjusted margin-top to play well with flexbox */
+    margin-top: 3rem;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
     .signup-container {
-        width: 95%; /* আরও বড় করে ছোট পর্দায় */
-        padding: 1.5rem;
+        padding: 2rem;
     }
 
-    nav a {
-        margin: 0.5rem;
-        padding: 0.75rem 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .signup-container {
-        padding: 1rem;
+    .form-group label {
+        font-size: 0.85rem;
     }
 
     .form-group input {
@@ -588,8 +516,9 @@ footer {
         font-size: 0.95rem;
     }
 
-    footer {
-        padding: 1rem;
+    .intro-text,
+    .signin-link {
+        font-size: 0.9rem;
     }
 }
 /* feedback.css */
@@ -1512,51 +1441,4 @@ footer {
     .review-card .rating {
         margin-left: 0;
     }
-}
-.container {
-  width: 90%; /* Takes up 90% of the parent container's width */
-  margin: 0 auto; /* Centers the container */
-}
-
-.sidebar {
-  width: 30%;
-  float: left;
-}
-
-.main-content {
-  width: 70%;
-  float: right;
-}
-/* Default styles for larger screens */
-.navigation {
-  display: flex;
-  justify-content: space-around;
-}
-
-.menu-icon {
-  display: none; /* Hide on larger screens */
-}
-
-/* Styles for screens 768px wide and below (typical tablet size) */
-@media screen and (max-width: 768px) {
-  .navigation {
-    display: none; /* Hide the full navigation */
-  }
-
-  .menu-icon {
-    display: block; /* Show the menu icon */
-  }
-}
-
-/* Styles for screens 480px wide and below (typical mobile size) */
-@media screen and (max-width: 480px) {
-  .sidebar {
-    width: 100%;
-    float: none; /* Stack elements on top of each other */
-  }
-
-  .main-content {
-    width: 100%;
-    float: none;
-  }
 }
