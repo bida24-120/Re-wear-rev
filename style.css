@@ -59,27 +59,29 @@ main {
     border-radius: 8px;
     max-width: 800px;
     margin: 0 auto;
-    display: flex; /*Use flexbox to arrange image and text*/
-    align-items: center; /*center items vertically*/
+    display: flex; /* Use flexbox to arrange image and text */
+    align-items: center; /* Center items vertically */
+    flex-direction: row; /* Default is row, but explicit for clarity */
 }
 
 .hero-image {
-    width: 40%; /*adjust image width as needed*/
-    height: 300px; /*adjust image height as needed*/
-    overflow: hidden; /*prevent image overflow*/
-    border-radius: 8px 0 0 8px; /*round left corners*/
+    width: 40%; /* Adjust image width as needed */
+    height: auto; /* Let the height adjust proportionally */
+    border-radius: 8px 0 0 8px; /* Round left corners */
+    overflow: hidden; /* Hide any potential image overflow */
 }
 
 .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /*ensure image covers the container*/
+    display: block; /* Remove any extra spacing below the image */
+    width: 100%; /* Make the image scale to the width of its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the container without distortion (may crop) */
 }
 
 .hero-text {
-    width: 60%; /*adjust text width as needed*/
+    width: 60%; /* Adjust text width as needed */
     padding: 0 2rem;
-    text-align: left; /*align text to the left*/
+    text-align: left; /* Align text to the left */
 }
 
 .hero h2 {
@@ -115,34 +117,25 @@ footer {
     bottom: 0;
     width: 100%;
 }
-/* style.css (shared styles) */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f5f5dc; /* Beige background */
+
+/* Media Query for smaller screens (adjust as needed) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Stack image and text on smaller screens */
+    }
+
+    .hero-image {
+        width: 100%;
+        border-radius: 8px 8px 0 0; /* Round top corners when stacked */
+        height: auto; /* Adjust height automatically */
+    }
+
+    .hero-text {
+        width: 100%;
+        padding: 2rem;
+        text-align: center; /* Center text on smaller screens */
+    }
 }
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-/* ... (rest of the shared styles from index.html) ... */
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
 /* products.css (specific styles for products page) */
 .product-categories {
     text-align: center;
