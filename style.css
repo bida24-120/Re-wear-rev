@@ -1197,9 +1197,9 @@ footer {
 }
 
 .product-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 100%; /* Make image responsive within its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image covers the area without distortion (may crop) */
     border-radius: 8px;
     margin-bottom: 1rem;
 }
@@ -1243,6 +1243,49 @@ footer {
 
 .add-to-cart-btn:hover, .view-details-btn:hover {
     background-color: #e0e0c0; /* Slightly darker beige on hover */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax for smaller screens */
+    }
+
+    .product-item img {
+        height: 150px; /* Adjust image height for smaller screens */
+    }
+}
+
+/* Media Query for even smaller screens */
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+
+    .product-item {
+        padding: 1rem;
+    }
+
+    .product-item img {
+        height: 180px; /* Adjust image height for very small screens */
+        margin-bottom: 0.75rem;
+    }
+
+    .product-name {
+        font-size: 1.1rem;
+    }
+
+    .product-price,
+    .product-stock,
+    .add-to-cart-btn,
+    .view-details-btn {
+        font-size: 0.9rem;
+    }
+
+    .add-to-cart-btn, .view-details-btn {
+        padding: 0.6rem 1rem;
+        margin: 0.2rem;
+    }
 }
 /* books.css */
 .books-products {
