@@ -1412,3 +1412,50 @@ footer {
         margin-left: 0;
     }
 }
+.container {
+  width: 90%; /* Takes up 90% of the parent container's width */
+  margin: 0 auto; /* Centers the container */
+}
+
+.sidebar {
+  width: 30%;
+  float: left;
+}
+
+.main-content {
+  width: 70%;
+  float: right;
+}
+/* Default styles for larger screens */
+.navigation {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-icon {
+  display: none; /* Hide on larger screens */
+}
+
+/* Styles for screens 768px wide and below (typical tablet size) */
+@media screen and (max-width: 768px) {
+  .navigation {
+    display: none; /* Hide the full navigation */
+  }
+
+  .menu-icon {
+    display: block; /* Show the menu icon */
+  }
+}
+
+/* Styles for screens 480px wide and below (typical mobile size) */
+@media screen and (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    float: none; /* Stack elements on top of each other */
+  }
+
+  .main-content {
+    width: 100%;
+    float: none;
+  }
+}
