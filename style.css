@@ -239,6 +239,9 @@ body {
     background: linear-gradient(to right, #f0f4f8, #d9e2ec);
     margin: 0;
     padding: 0;
+    display: flex; /* Enable flexbox for centering the main content */
+    flex-direction: column; /* Stack header, main, and footer */
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
 
 header {
@@ -276,26 +279,29 @@ nav a:hover {
     color: #0056b3;
 }
 
+main {
+    flex-grow: 1; /* Allow main to take up remaining vertical space */
+    display: flex; /* Center the signin container horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Add some padding around the container on smaller screens */
+}
+
 .signin-container {
-    width: 400px;
-    margin: 5rem auto;
     background-color: #ffffff;
     padding: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 90%; /* Start with a percentage width for responsiveness */
+    max-width: 400px; /* Set a maximum width to prevent it from getting too large on wider screens */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
 .signin-container h2 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem; /* Increased margin for better spacing */
     color: #333;
     font-size: 1.8rem;
-}
-
-.intro-text {
-    margin-bottom: 2rem;
-    color: #666;
-    font-size: 0.95rem;
 }
 
 .form-group {
@@ -311,7 +317,7 @@ nav a:hover {
 }
 
 .form-group input {
-    width: 100%;
+    width: calc(100% - 20px); /* Adjust for padding and border */
     padding: 0.9rem;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -357,6 +363,31 @@ footer {
     color: #777;
     font-size: 0.85rem;
     margin-top: 3rem;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 600px) {
+    .signin-container {
+        padding: 2rem;
+    }
+
+    .form-group label {
+        font-size: 0.85rem;
+    }
+
+    .form-group input {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .signin-button {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .signup-link {
+        font-size: 0.9rem;
+    }
 }
 /* signup.css */
 body {
