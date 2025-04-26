@@ -358,12 +358,12 @@ footer {
     font-size: 0.85rem;
     margin-top: 3rem;
 }
-/* signup.css */
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right, #f0f4f8, #d9e2ec);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 header {
@@ -387,6 +387,9 @@ header {
 
 nav {
     margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Added for better ছোট screen navigation */
 }
 
 nav a {
@@ -395,17 +398,30 @@ nav a {
     color: #007bff;
     font-weight: 500;
     transition: color 0.3s ease;
+    padding: 0.5rem 1rem; /* Added padding for better touch area */
+    border-radius: 5px; /* Added border-radius for visual appeal */
 }
 
 nav a:hover {
     color: #0056b3;
+    background-color: rgba(0, 123, 255, 0.1); /* হালকা background on hover */
 }
 
+main {
+    flex: 1; /* Added to make main take up available vertical space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+
 .signup-container {
-    width: 400px;
-    margin: 5rem auto;
+    width: 90%; /* Increased width for better ছোট screen ব্যবহার */
+    max-width: 400px; /* কিন্তু still maintain a maximum width */
+    margin: 2rem auto; /* Reduced top margin and centered */
     background-color: #ffffff;
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -436,7 +452,7 @@ nav a:hover {
 }
 
 .form-group input {
-    width: 100%;
+    width: calc(100% - 20px); /* Adjusted width with padding in mind */
     padding: 0.9rem;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -481,9 +497,41 @@ footer {
     background-color: #f8f9fa;
     color: #777;
     font-size: 0.85rem;
-    margin-top: 3rem;
+    margin-top: 2rem; /* Adjusted margin-top to play well with flexbox */
 }
 
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .signup-container {
+        width: 95%; /* আরও বড় করে ছোট পর্দায় */
+        padding: 1.5rem;
+    }
+
+    nav a {
+        margin: 0.5rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-container {
+        padding: 1rem;
+    }
+
+    .form-group input {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .signup-button {
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+}
 /* feedback.css */
 .feedback-container {
     width: 500px;
