@@ -619,7 +619,7 @@ footer {
 }
 /* donate.css */
 .donate-container {
-    width: 600px;
+    max-width: 600px;
     margin: 4rem auto;
     background-color: #f9f9f9;
     padding: 3rem;
@@ -671,14 +671,15 @@ footer {
 }
 
 .form-group select {
-    appearance: none;  /* Remove default arrow */
-    -webkit-appearance: none;  /* For Safari */
-    -moz-appearance: none;    /* For Firefox */
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 4 5"><path d="M2 0L0 2h4L2 0z"/></svg>'); /* Custom arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 4 5"><path d="M2 0L0 2h4L2 0z"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 0.7rem top 50%; /* Position the arrow */
+    background-position: right 0.7rem top 50%;
     background-size: 0.6rem;
-    padding-right: 2rem; /* Make space for the arrow */
+    padding-right: 2rem;
+    max-width: 100%;
 }
 
 .form-group select:focus {
@@ -697,6 +698,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 1rem;
+    width: auto;
 }
 
 .donation-button:hover {
@@ -747,6 +749,62 @@ footer {
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f4f4f4;
+    max-width: 100%;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .donate-container {
+        width: 95%;
+        margin: 2rem auto;
+        padding: 2rem;
+    }
+
+    .donation-form {
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .donation-button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .additional-info {
+        margin-top: 2rem;
+        padding: 0;
+    }
+
+    .additional-info ul {
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .donate-container h2 {
+        font-size: 2rem;
+    }
+
+    .donate-container p {
+        font-size: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .donation-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
 }
 
 /* contact.css */
