@@ -1180,7 +1180,7 @@ footer {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Creates responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     padding: 1rem;
 }
@@ -1198,9 +1198,9 @@ footer {
 }
 
 .product-item img {
-    width: 100%; /* Make images responsive within their container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure images cover the area without distortion (may crop) */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 1rem;
 }
@@ -1240,71 +1240,12 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 1rem;
-    width: 80%; /* Make buttons scale within their container */
 }
 
 .add-to-cart-btn:hover, .view-details-btn:hover {
     background-color: #e0e0c0; /* Slightly darker beige on hover */
 }
 
-/* Media Query for smaller screens (example: tablets) */
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax for smaller columns */
-        gap: 1rem;
-    }
-
-    .product-item {
-        padding: 1rem;
-    }
-
-    .product-item img {
-        height: 150px; /* Adjust image height on smaller screens */
-        margin-bottom: 0.75rem;
-    }
-
-    .product-name {
-        font-size: 1.1rem;
-    }
-
-    .product-price, .product-stock, .view-details-btn {
-        font-size: 0.9rem;
-    }
-
-    .view-details-btn {
-        padding: 0.6rem 1rem;
-    }
-}
-
-/* Media Query for even smaller screens (example: mobile) */
-@media (max-width: 480px) {
-    .product-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
-        padding: 0.5rem;
-        gap: 1rem;
-    }
-
-    .product-item {
-        padding: 1rem;
-    }
-
-    .product-item img {
-        height: 180px; /* Adjust image height for mobile */
-        margin-bottom: 0.5rem;
-    }
-
-    .product-name {
-        font-size: 1rem;
-    }
-
-    .product-price, .product-stock, .view-details-btn {
-        font-size: 0.85rem;
-    }
-
-    .view-details-btn {
-        padding: 0.5rem 0.8rem;
-    }
-}
 /* books.css */
 .books-products {
     padding: 2rem;
@@ -1451,6 +1392,15 @@ footer {
 .add-to-cart-btn:hover {
     background-color: #e0e0c0; /* Slightly darker beige on hover */
 }
+.reviews-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* reviews.css */
 .reviews-container {
     max-width: 900px; /* Increased max-width for better flow on wider screens */
