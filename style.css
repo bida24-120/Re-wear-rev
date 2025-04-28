@@ -1,3 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reluxe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Reluxe</h1>
+            <img src="logo.01.jpg.png" alt="Reluxe Logo">
+            <p>"Where treasure gets a second chance"</p>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="donate.html">Donate</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="reviews.html">Customer Reviews</a>
+            <a href="signin.html">Sign In</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="hero-image">
+                <img src="access.04.jpg" alt="Fashion Image">
+            </div>
+            <div class="hero-text">
+                <h2>Discover Sustainable Style</h2>
+                <p>Find unique, pre-loved fashion and give clothes a new life.</p>
+                <a href="products.html" class="button">Browse Products</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Reluxe. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+And here is the CSS code from your style.css file:
+
+CSS
+
 body {
     font-family: sans-serif;
     margin: 0;
@@ -21,6 +71,13 @@ header {
     margin: 0;
     font-size: 2.5rem;
     font-weight: bold;
+}
+
+.logo img {
+    max-width: 150px; /* Adjust this value as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* To prevent extra spacing below the image */
+    margin-bottom: 0.5rem; /* Add some space between the logo and the tagline */
 }
 
 .logo p {
@@ -135,6 +192,52 @@ footer {
         padding: 2rem;
         text-align: center; /* Center text on smaller screens */
     }
+}
+/* products.css (specific styles for products page) */
+.product-categories {
+    text-align: center;
+    padding: 2rem;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e0e0e0;
+    padding: 1rem;
+    margin: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    width: 180px; /* Increased width */
+    transition: background-color 0.3s ease;
+}
+
+.category-button img {
+    width: 150px; /* Increased image size */
+    height: 150px; /* Increased image size */
+    object-fit: cover;
+    border-radius: 5px; /* Square images with slight rounding */
+    margin-bottom: 0.5rem;
+}
+
+.category-button:hover {
+    background-color: #d0d0d0;
+}
+
+.product-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.product-section h3 {
+    margin-bottom: 1rem;
 }
 /* products.css (specific styles for products page) */
 .product-categories {
