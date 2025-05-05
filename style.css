@@ -1,147 +1,283 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f5f5dc; /* Beige background */
+
+    font-family: sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+
+    line-height: 1.6;
+
+    background-color: #f5f5dc; /* Beige background */
+
 }
+
+
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+
+    background-color: #333;
+
+    color: #fff;
+
+    padding: 1rem 0;
+
+    text-align: center;
+
 }
+
+
 
 .logo {
-    margin-bottom: 1rem;
+
+    margin-bottom: 1rem;
+
 }
+
+
 
 .logo h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: bold;
+
+    margin: 0;
+
+    font-size: 2.5rem;
+
+    font-weight: bold;
+
 }
+
+
 
 .logo img {
-    max-width: 150px; /* Adjust this value as needed */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* To prevent extra spacing below the image */
-    margin-bottom: 0.5rem; /* Add some space between the logo and the tagline */
+
+    max-width: 150px; /* Adjust this value as needed */
+
+    height: auto; /* Maintain aspect ratio */
+
+    display: block; /* To prevent extra spacing below the image */
+
+    margin-bottom: 0.5rem; /* Add some space between the logo and the tagline */
+
 }
+
+
 
 .logo p {
-    margin: 0;
-    font-style: italic;
-    color: #ccc;
+
+    margin: 0;
+
+    font-style: italic;
+
+    color: #ccc;
+
 }
+
+
 
 nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
 }
+
+
 
 nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    padding: 0.5rem 1rem;
+
+    margin: 0 0.5rem;
+
+    border-radius: 5px;
+
+    transition: background-color 0.3s ease;
+
 }
+
+
 
 nav a:hover {
-    background-color: #555;
+
+    background-color: #555;
+
 }
+
+
 
 main {
-    text-align: center;
-    padding: 4rem 2rem;
+
+    text-align: center;
+
+    padding: 4rem 2rem;
+
 }
+
+
 
 .hero {
-    background-color: #e0e0e0;
-    padding: 3rem 2rem;
-    border-radius: 8px;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex; /* Use flexbox to arrange image and text */
-    align-items: center; /* Center items vertically */
-    flex-direction: row; /* Default is row, but explicit for clarity */
+
+    background-color: #e0e0e0;
+
+    padding: 3rem 2rem;
+
+    border-radius: 8px;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    display: flex; /* Use flexbox to arrange image and text */
+
+    align-items: center; /* Center items vertically */
+
+    flex-direction: row; /* Default is row, but explicit for clarity */
+
 }
+
+
 
 .hero-image {
-    width: 40%; /* Adjust image width as needed */
-    height: auto; /* Let the height adjust proportionally */
-    border-radius: 8px 0 0 8px; /* Round left corners */
-    overflow: hidden; /* Hide any potential image overflow */
+
+    width: 40%; /* Adjust image width as needed */
+
+    height: auto; /* Let the height adjust proportionally */
+
+    border-radius: 8px 0 0 8px; /* Round left corners */
+
+    overflow: hidden; /* Hide any potential image overflow */
+
 }
+
+
 
 .hero-image img {
-    display: block; /* Remove any extra spacing below the image */
-    width: 100%; /* Make the image scale to the width of its container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image covers the container without distortion (may crop) */
+
+    display: block; /* Remove any extra spacing below the image */
+
+    width: 100%; /* Make the image scale to the width of its container */
+
+    height: auto; /* Maintain aspect ratio */
+
+    object-fit: cover; /* Ensure the image covers the container without distortion (may crop) */
+
 }
+
+
 
 .hero-text {
-    width: 60%; /* Adjust text width as needed */
-    padding: 0 2rem;
-    text-align: left; /* Align text to the left */
+
+    width: 60%; /* Adjust text width as needed */
+
+    padding: 0 2rem;
+
+    text-align: left; /* Align text to the left */
+
 }
+
+
 
 .hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+
+    font-size: 2.5rem;
+
+    margin-bottom: 1rem;
+
 }
+
+
 
 .hero p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 2rem;
+
 }
+
+
 
 .button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+
+    display: inline-block;
+
+    background-color: #007bff;
+
+    color: #fff;
+
+    padding: 1rem 2rem;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    transition: background-color 0.3s ease;
+
 }
+
+
 
 .button:hover {
-    background-color: #0056b3;
+
+    background-color: #0056b3;
+
 }
+
+
 
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+
+    background-color: #333;
+
+    color: #fff;
+
+    text-align: center;
+
+    padding: 1rem 0;
+
+    position: relative;
+
+    bottom: 0;
+
+    width: 100%;
+
 }
 
+
+
 /* Media Query for smaller screens (adjust as needed) */
+
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column; /* Stack image and text on smaller screens */
-    }
 
-    .hero-image {
-        width: 100%;
-        border-radius: 8px 8px 0 0; /* Round top corners when stacked */
-        height: auto; /* Adjust height automatically */
-    }
+    .hero {
 
-    .hero-text {
-        width: 100%;
-        padding: 2rem;
-        text-align: center; /* Center text on smaller screens */
+        flex-direction: column; /* Stack image and text on smaller screens */
+
+    }
+    .hero-image {
+
+        width: 100%;
+
+        border-radius: 8px 8px 0 0; /* Round top corners when stacked */
+
+        height: auto; /* Adjust height automatically */
     }
+    .hero-text {
+
+        width: 100%;
+
+        padding: 2rem;
+
+        text-align: center; /* Center text on smaller screens */
+    }
+
 }
 /* products.css (specific styles for products page) */
 .product-categories {
