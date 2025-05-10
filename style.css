@@ -23,13 +23,6 @@ header {
     font-weight: bold;
 }
 
-.logo img {
-    max-width: 150px; /* Adjust this value as needed */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* To prevent extra spacing below the image */
-    margin-bottom: 0.5rem; /* Add some space between the logo and the tagline */
-}
-
 .logo p {
     margin: 0;
     font-style: italic;
@@ -142,52 +135,6 @@ footer {
         padding: 2rem;
         text-align: center; /* Center text on smaller screens */
     }
-}
-/* products.css (specific styles for products page) */
-.product-categories {
-    text-align: center;
-    padding: 2rem;
-}
-
-.category-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.category-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #e0e0e0;
-    padding: 1rem;
-    margin: 0.5rem;
-    text-decoration: none;
-    color: #333;
-    border-radius: 8px;
-    width: 180px; /* Increased width */
-    transition: background-color 0.3s ease;
-}
-
-.category-button img {
-    width: 150px; /* Increased image size */
-    height: 150px; /* Increased image size */
-    object-fit: cover;
-    border-radius: 5px; /* Square images with slight rounding */
-    margin-bottom: 0.5rem;
-}
-
-.category-button:hover {
-    background-color: #d0d0d0;
-}
-
-.product-section {
-    padding: 2rem;
-    text-align: center;
-}
-
-.product-section h3 {
-    margin-bottom: 1rem;
 }
 /* products.css (specific styles for products page) */
 .product-categories {
@@ -672,7 +619,7 @@ footer {
 }
 /* donate.css */
 .donate-container {
-    max-width: 600px;
+    width: 600px;
     margin: 4rem auto;
     background-color: #f9f9f9;
     padding: 3rem;
@@ -693,56 +640,48 @@ footer {
     font-size: 1.1rem;
 }
 
-.donation-form {
-    text-align: left;
+.donation-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-bottom: 2rem;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.donation-button {
+    background-color: #00a699; /* Teal color */
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #333;
-    font-size: 1rem;
+.donation-button.custom-amount {
+    background-color: #6c757d; /* Gray for custom amount */
 }
 
-.form-group input, .form-group textarea, .form-group select {
-    width: 100%;
-    padding: 0.8rem;
+.donation-button:hover {
+    background-color: #008073;
+}
+
+.custom-amount-input {
+    margin-bottom: 2rem;
+}
+
+.custom-amount-input input {
+    padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
-    box-sizing: border-box;
+    width: 200px;
+    margin-right: 1rem;
 }
 
-.form-group textarea {
-    resize: vertical;
-}
-
-.form-group select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 4 5"><path d="M2 0L0 2h4L2 0z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 0.7rem top 50%;
-    background-size: 0.6rem;
-    padding-right: 2rem;
-    max-width: 100%;
-}
-
-.form-group select:focus {
-     outline: none;
-     border-color: #00a699;
-}
-
-
-.donation-button {
-    background-color: #00a699;
+.donate-now {
+    background-color: #28a745; /* Green for donate */
     color: #fff;
     border: none;
     padding: 1rem 2rem;
@@ -750,12 +689,19 @@ footer {
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 1rem;
-    width: auto;
 }
 
-.donation-button:hover {
-    background-color: #008073;
+.donate-now:hover {
+    background-color: #218838;
+}
+
+.payment-details {
+    margin-bottom: 2rem;
+}
+
+.payment-icons {
+    width: 200px;
+    margin-top: 1rem;
 }
 
 .thank-you {
@@ -763,103 +709,7 @@ footer {
     color: #28a745;
     margin-top: 2rem;
     font-size: 1.2rem;
-    text-align: center;
 }
-
-.additional-info {
-    margin-top: 3rem;
-    text-align: left;
-    padding: 0 1rem;
-}
-
-.additional-info h3 {
-    margin-bottom: 1rem;
-    color: #333;
-    font-size: 1.5rem;
-}
-
-.additional-info ul {
-    list-style-type: disc;
-    padding-left: 2rem;
-    margin-bottom: 1rem;
-    color: #555;
-    font-size: 1rem;
-}
-
-.additional-info li{
-    margin-bottom: 0.5rem;
-}
-
-.error-message {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
-#pickupDetails {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f4f4f4;
-    max-width: 100%;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .donate-container {
-        width: 95%;
-        margin: 2rem auto;
-        padding: 2rem;
-    }
-
-    .donation-form {
-        margin-bottom: 1rem;
-    }
-
-    .form-group {
-        margin-bottom: 1rem;
-    }
-
-    .form-group input, .form-group textarea, .form-group select {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .donation-button {
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .additional-info {
-        margin-top: 2rem;
-        padding: 0;
-    }
-
-    .additional-info ul {
-        padding-left: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .donate-container h2 {
-        font-size: 2rem;
-    }
-
-    .donate-container p {
-        font-size: 1rem;
-    }
-
-    .form-group label {
-        font-size: 0.9rem;
-    }
-
-    .donation-button {
-        font-size: 1rem;
-        padding: 0.8rem 1.5rem;
-    }
-}
-
 /* contact.css */
 .contact-container {
     width: 80%;
@@ -1102,80 +952,58 @@ footer {
 .add-to-cart-btn:hover {
     background-color: #e0e0c0; /* Slightly darker beige on hover */
 }
-/* shoes.css */
-.shoes-products {
-    padding: 2rem;
-    text-align: center;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-}
-
-.product-item {
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.product-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.product-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.product-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-.product-price {
-    color: #007bff;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
-.product-stock {
-    color: #555;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+.logo h1 {
+    margin: 0;
 }
 
-.add-to-cart-btn {
-    background-color: #f5f5dc; /* Beige color for buttons */
-    color: #333; /* Dark text for contrast */
-    border: 1px solid #ccc; /* Optional: Add a border for definition */
-    padding: 0.8rem 1.5rem;
-    margin: 0.3rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1rem;
+.logo p {
+    margin-top: 5px;
+    font-size: 0.8em;
+    font-style: italic;
 }
 
-.add-to-cart-btn:hover {
-    background-color: #e0e0c0; /* Slightly darker beige on hover */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1em;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
 /* furniture.css */
 .furniture-products {
     padding: 2rem;
